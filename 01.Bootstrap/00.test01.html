@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
@@ -12,10 +11,9 @@
     <style>
         * {font-family: 'Noto Sans KR', sans-serif; }
         th {text-align: center;width: 14.28%;}
-        td {height: 120px;}
+        td {height: 120px; font-weight: bold;}
         a {text-decoration: none;}
     </style>
-
 </head>
 
 <body>
@@ -77,41 +75,68 @@
                     </div>
                     <div><i class="fa-solid fa-pen text-primary me-3"></i><i class="fa-solid fa-table-list text-primary"></i></div>
                 </div>
-
-
-
                 <table class="table table-bordered">
                     <tr>
                         <th class="text-danger">일</th>
-                        <th>월</th>
-                        <th>화</th>
-                        <th>수</th>
-                        <th>목</th>
-                        <th>금</th>
+                        <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>
                         <th class="text-primary">토</th>
                     </tr>
                     <tr>
                         <td class="text-danger" style="opacity:0.5;">26</td>
                         <td style="opacity:0.5;">27</td>
-                        <td style="opacity:0.5;">28</td>
-                        <td class="text-danger">1</td>
+                        <td style="opacity:0.5;">28
+                            <div style="font-size: smaller;"><small>10:30 일정 테스트</small></div>
+                        <td class="text-danger">
+                            <div class="d-flex justify-content-between" ;>1
+                                <small>삼일절</small>
+                            </div>
+                        </td>
                         <td class="table-primary">2</td>
-                        <td>3</td>
+                        <td>
+                            <div class="d-flex justify-content-between">3
+                                <small>삼겹살데이</small>
+                            </div>
+                            <div style="font-size: smaller;"><small>16:00 주간 업무 리뷰</small></div>
+                        </td>
                         <td class="text-primary">4</td>
                     </tr>
                     <tr>
                         <td class="text-danger">5</td>
-                        <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                        <td>
+                            <div class="d-flex justify-content-between">6
+                                <small>경칩</small>
+                            </div>
+                            <div style="font-size: smaller;"><small>13:00 동영상 녹화</small></div>
+                        </td>
+                        <td>7
+                            <div style="font-size: smaller;"><small>16:00 주간 업무 리뷰</small></div>
+                        </td>
+                        <td>8
+                            <div style="font-size: smaller;"><small>14:00 <strong>최종발표</strong></small></div>
+                        </td>
+                        <td>9</td><td>10</td>
                         <td class="text-primary">11</td>
                     </tr>
                     <tr>
                         <td class="text-danger">12</td>
-                        <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+                        <td>13</td>
+                        <td>
+                            <div class="d-flex justify-content-between">14
+                                <small>화이트데이</small>
+                            </div>
+                        </td>
+                        <td>15</td><td>16</td><td>17</td>
                         <td class="text-primary">18</td>
                     </tr>
                     <tr>
                         <td class="text-danger">19</td>
-                        <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+                        <td>20</td>
+                        <td>
+                            <div class="d-flex justify-content-between">21
+                                <small>춘분</small>
+                            </div>
+                        </td>
+                        <td>22</td><td>23</td><td>24</td>
                         <td class="text-primary">25</td>
                     </tr>
                     <tr>
@@ -120,32 +145,15 @@
                         <td class="text-primary" style="opacity:0.5">1</td>
                     </tr>
                 </table>
-
-
             </div>
-
-
-
-
         </div>
     </div>
     </div>
-
-
-
-
-
-
-
-
-
     <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
         <div class="container-fluid justify-content-center">
             Copyright &copy; 2021-2023 jkh Corp. All rights reserved.
         </div>
     </nav>
-
 </body>
 
 </html>
-<!-- <i class="fa-regular fa-square-list"></i> -->
