@@ -11,21 +11,17 @@
             num=document.getElementById('num').value; 
             
             let resTag = document.getElementById('result');
-            if((num%3==0&&num%5==0)&&num!=0)
+            if(num%15==0&&num>0)
             {
                 resTag.innerHTML='<h4>FIZZ BUZZ</h4>';
             }
-            else if(num%5==0&&num!=0)
+            else if(num%5==0&&num>0)
             {
                 resTag.innerHTML='<h4>BUZZ</h4>';
             }
-            else if(num%3==0&&num!=0)
+            else if(num%3==0&&num>0)
             {
                 resTag.innerHTML='<h4>FIZZ</h4>';
-            }
-            else if(num==0)
-            {
-                resTag.innerHTML='';
             }
             else
             {
@@ -35,7 +31,7 @@
     </script>
 </head>
 <body style="margin:50px;">
-    <input type="text" id="num"  placeholder="정수를 입력하세요">
+    <input type="text"  id="num"  placeholder="정수를 입력하세요">
     <button onclick="fizzbuzz()">확인</button>
     <br>
     <p id="result"></p>
