@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizz&Buzz</title>
+    <script>
+        function fizzbuzz() 
+        {
+            num=document.getElementById('num').value; 
+            
+            let resTag = document.getElementById('result');
+            if((num%3==0&&num%5==0)&&num!=0)
+            {
+                resTag.innerHTML='<h4>FIZZ BUZZ</h4>';
+            }
+            else if(num%5==0&&num!=0)
+            {
+                resTag.innerHTML='<h4>BUZZ</h4>';
+            }
+            else if(num%3==0&&num!=0)
+            {
+                resTag.innerHTML='<h4>FIZZ</h4>';
+            }
+            else if(num==0)
+            {
+                resTag.innerHTML='';
+            }
+            else
+            {
+                resTag.innerHTML=num;
+            }
+        }
+    </script>
+</head>
+<body style="margin:50px;">
+    <input type="text" id="num"  placeholder="정수를 입력하세요">
+    <button onclick="fizzbuzz()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만나이 계산</title>
+    <script>
+        function fullAge()
+        {
+            let year = Number(document.getElementById('bYear').vaulue);
+            let month = Number(document.getElementById('bYear').vaulue);
+            let day = Number(document.getElementById('bYear').vaulue);
+            const today = new Date();
+            const tYear = today.getFullYear();
+            const tMonth = today.getMonth() + 1;
+            const tDay = today.getDate();
+
+            let age = (tYear - year);
+            let month_ = (tMonth - month);
+            let day_ = (tDay - day);
+            if (month_ < 0 || (month_ == 0 && day_ < 0)) {
+                age--;
+            }
+            let resTag=document.getElementById('result');
+            resTag.innerHTML='<h4>만 나이는 '+ age +' 입니다</h4>'
+
+        }
+    </script>
+</head>
+<body style="margin:50px">
+    <input type="text" id="bYear" placeholder="출생년도">
+    <input type="text" id="bMonth" placeholder="출생월">
+    <input type="text" id="bDay" placeholder="출생일">
+    <button onclick="fullAge()">만나이 계산</button>
+    <p id="result"></p>
+</body>
+</html>
