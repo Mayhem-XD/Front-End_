@@ -10,10 +10,7 @@
         {   
             let num1=Number(document.getElementById('num1').value); 
             let num2=Number(document.getElementById('num2').value); 
-            
             let resTag = document.getElementById('result');
-            
-
             if(num2>=45)
             {
                 num2-=45;
@@ -22,12 +19,9 @@
             {
                 num2+=15;
                 num1--;
-                if(num1<0){num1+=24;}
+                if(num1<0){num1=23;}
             }
-            
-
             resTag.innerHTML='<h4>'+num1+' '+num2+'</h4>';
-            
         }
     </script>
 </head>
