@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function multiple() 
+        {
+            num=document.getElementById('num').value; 
+            
+            let resTag = document.getElementById('result');
+            let multiple='';
+            for(let i=1;i<10;i++)
+            {
+                multiple+=`<h4>${num} * ${i} = ${num*i}</h4>`;
+            }
+
+            resTag.innerHTML=multiple;
+        }
+    </script>
+</head>
+<body style="margin:50px;">
+    <input type="text" id="num" placeholder="정수를 입력하세요">
+    <button onclick="multiple()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

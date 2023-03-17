@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dice() 
+        {   
+            // let num1=Number(document.getElementById('num1').value); 
+            // let num2=Number(document.getElementById('num2').value); 
+            let dice1 = parseInt(Math.ceil(Math.random() * 6));
+            let dice2 = parseInt(Math.ceil(Math.random() * 6));
+            let dice3 = parseInt(Math.ceil(Math.random() * 6));
+            let money;
+            let solt=[];
+            solt.push(dice1,dice2,dice3);
+            let resTag = document.getElementById('result');
+            if(dice1==dice2&&dice3==dice2&&dice1==dice3)
+            {
+                money=10000+(dice1*1000);
+            }
+            else if(dice1==dice2||dice2==dice3||dice1==dice3)
+            {
+                
+                let temp=0;
+                
+                for(let i=2;i>=0;i--)
+                {
+                    for(let j=0;j<i;j++)
+                    {
+                        if(solt[j]<solt[i])
+                        {
+                            temp=solt[j];
+                            solt[j]=solt[j+1];
+                            solt[j+1]=temp;
+                        }
+                    }
+                }
+                temp=solt[1];
+                money=1000+temp*1000;
+            }
+            else
+            {
+                let maxVal=solt[0];
+                for(let i=1;i<3;i++)
+                    {
+                        if(maxVal<solt[i])
+                            {
+                                maxVal=solt[i];
+                            }
+                    }
+                money=maxVal*100;
+            }
+
+
+            resTag.innerHTML=`<h4> 주사위 ${dice1}, ${dice2}, ${dice3} : ${money} </h4>`;
+            
+        }
+    </script>
+</head>
+<body style="margin:50px;">
+
+    <button onclick="dice()">굴리기</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
+
+
+
+
+<!--  
+    let dice1 = parseInt(Math.ceil(Math.random() * 6));
+
+    let dice2 = parseInt(Math.ceil(Math.random() * 6));
+
+    let dice3 = parseInt(Math.ceil(Math.random() * 6));
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공약수</title>
+    <script>
+        function commonDivisors() 
+        {
+            num1_=document.getElementById('num1').value; 
+            num2_=document.getElementById('num2').value; 
+            let resTag = document.getElementById('result');
+            let divisors =[];
+            
+            for(let i=1;i<=((num1_>num2_)? num2_:num1_);i++)
+            {
+                if(num1_%i==0&&num2_%i==0)
+                {
+                    divisors.push(i);
+                }
+            }
+            resTag.innerHTML=`<h4>  ${num1_}, ${num2_} 의 공약수 : ${divisors} </h4>`;
+            
+        }
+    </script>
+</head>
+<body style="margin:50px;">
+    <input type="text" id="num1" placeholder="첫번째 자연수를 입력하세요">
+    <input type="text" id="num2" placeholder="두번째 자연수를 입력하세요">
+    <button onclick="commonDivisors()">확인</button>
+    <br>
+    <p id="result"></p>
+    
+</body>
+</html>
