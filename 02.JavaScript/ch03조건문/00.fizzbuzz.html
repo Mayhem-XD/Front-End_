@@ -9,24 +9,25 @@
         function fizzbuzz() 
         {
             num=document.getElementById('num').value; 
-            
             let resTag = document.getElementById('result');
+            let fb;
             if(num%15==0&&num>0)
             {
-                resTag.innerHTML='<h4>FIZZ BUZZ</h4>';
+                fb='FizzBuzz';
             }
             else if(num%5==0&&num>0)
             {
-                resTag.innerHTML='<h4>BUZZ</h4>';
+                fb='Buzz';
             }
             else if(num%3==0&&num>0)
             {
-                resTag.innerHTML='<h4>FIZZ</h4>';
+                fb='Fizz';
             }
             else
             {
-                resTag.innerHTML=num;
+                fb=num;
             }
+            resTag.innerHTML = '<h4>' + fb + '</h4>';
         }
     </script>
 </head>
