@@ -8,8 +8,6 @@
     <script>
         function dice() 
         {   
-            // let num1=Number(document.getElementById('num1').value); 
-            // let num2=Number(document.getElementById('num2').value); 
             let dice1 = parseInt(Math.ceil(Math.random() * 6));
             let dice2 = parseInt(Math.ceil(Math.random() * 6));
             let dice3 = parseInt(Math.ceil(Math.random() * 6));
@@ -25,7 +23,7 @@
             {
                 
                 let temp=0;
-                //Bubble Sorting
+                //Bubble Sorting 후 중간값
                 for(let i=2;i>=0;i--)
                 {
                     for(let j=0;j<i;j++)
@@ -41,6 +39,7 @@
                 temp=sort[1];
                 money=1000+temp*1000;
             }
+            //최대값 찾기
             else
             {
                 let maxVal=sort[0];
@@ -53,8 +52,6 @@
                     }
                 money=maxVal*100;
             }
-
-
             resTag.innerHTML=`<h4> 주사위 ${dice1}, ${dice2}, ${dice3} : ${money} </h4>`;
             
         }
@@ -67,14 +64,3 @@
     <p id="result"></p>
 </body>
 </html>
-
-
-
-
-<!--  
-    let dice1 = parseInt(Math.ceil(Math.random() * 6));
-
-    let dice2 = parseInt(Math.ceil(Math.random() * 6));
-
-    let dice3 = parseInt(Math.ceil(Math.random() * 6));
--->
