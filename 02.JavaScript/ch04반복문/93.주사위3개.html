@@ -14,8 +14,8 @@
             let dice2 = parseInt(Math.ceil(Math.random() * 6));
             let dice3 = parseInt(Math.ceil(Math.random() * 6));
             let money;
-            let solt=[];
-            solt.push(dice1,dice2,dice3);
+            let sort=[];
+            sort.push(dice1,dice2,dice3);
             let resTag = document.getElementById('result');
             if(dice1==dice2&&dice3==dice2&&dice1==dice3)
             {
@@ -25,30 +25,30 @@
             {
                 
                 let temp=0;
-                
+                //Bubble Sorting
                 for(let i=2;i>=0;i--)
                 {
                     for(let j=0;j<i;j++)
                     {
-                        if(solt[j]<solt[i])
+                        if(sort[j]<sort[i])
                         {
-                            temp=solt[j];
-                            solt[j]=solt[j+1];
-                            solt[j+1]=temp;
+                            temp=sort[j];
+                            sort[j]=sort[j+1];
+                            sort[j+1]=temp;
                         }
                     }
                 }
-                temp=solt[1];
+                temp=sort[1];
                 money=1000+temp*1000;
             }
             else
             {
-                let maxVal=solt[0];
+                let maxVal=sort[0];
                 for(let i=1;i<3;i++)
                     {
-                        if(maxVal<solt[i])
+                        if(maxVal<sort[i])
                             {
-                                maxVal=solt[i];
+                                maxVal=sort[i];
                             }
                     }
                 money=maxVal*100;
