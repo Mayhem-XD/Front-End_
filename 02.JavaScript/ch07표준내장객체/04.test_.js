@@ -37,3 +37,19 @@ function isPalindrome2(str)
     return str == reverStr;
 }
 console.log(isPalindrome2('토마토'));
+
+function strCount(str, dst)
+{
+    return str.split(dst).length -1;
+}
+let numStr='';
+for(let i=1;i<=1000;i++)
+{
+    numStr+=i;
+}
+console.log(numStr.length);
+for(let num=0;num<10;num++)
+{
+    let count =strCount(numStr,String(num));
+    console.log(`${num}은 ${count} 번 사용되었습니다.`)
+}
