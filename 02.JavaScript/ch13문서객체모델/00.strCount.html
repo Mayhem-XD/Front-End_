@@ -4,66 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>strCounter</title>
+    <title>Document</title>
     <style>
         * {margin: 40px;}
     </style>
     <script>
-        let numNode=document.getElementById('num');
-        let num=parseInt(numNode.value);
-        let result=[];
-
-        function isPalindrome(str)
+        function isPalindrome()
         {
-            let str = document.getElementById(q1).value;
-            let len = str.length;
-            for(let i=0;i<len-1;i++)
+            let str=document.getElementById('word').value;
+            let reverStr='';
+            let result='';
+            for(let i=str.length-1;i>=0;i--)
             {
-                let result = arr[i] != arr[len-1-i] ? false : true;
+                reverStr += str[i];
             }
-            document.getElementById('result1').innerHTML = result;
+            result = str == reverStr;
+            let resTag = document.getElementById('result1');
+            resTag.innerHTML=result;
         }
-
-        
-        function strCount(str, dst)
-        {
-            return str.split(dst).length -1;
+        function findFileName()
+        {   
+            let str = 'C:\\Program Files\\nodejs\\node.exe.';
+            let result = str.slice(24,28);
+            let resTag = document.getElementById('result2');
+            resTag.innerHTML=result;
         }
-        function counter(num)
+        function counter()
         {
             let num=document.getElementById('num').value;
-            
-            let numArray='';
+
+            function strCount(str, dst)
+            {
+            return str.split(dst).length -1;
+            }
+
+            let numStr='';
             for(let i=1;i<=1000;i++)
             {
-                numArray+=i;
+                numStr+=i;
             }
-            for(let i=0;i<num;i++)
-            {
-                let count=strCount(numArray,String(i));
-                result += `${numArray}은 ${count}번<br>`
-            }
-            document.getElementById('result2').innerHTML =result;
+            let count =strCount(numStr,String(num));
+            let resTag = document.getElementById('result3');
+            resTag.innerHTML=`${num}은 ${count} 번 사용되었습니다.`;
+            
         }
 
     </script>
 </head>
 <body>
-    <input type="text" id="q1" placeholder="문자를 입력하세요">
-    <button onclick="counter()">확인</button>
+    
+    <input type="text" id="word" placeholder="입력하세요">
+    <button onclick="isPalindrome()">확인</button>
     <br>
     <p id="result1"></p>
-    <input type="text" id="num2" placeholder="정수를 입력하세요">
-    <button onclick="counter()">확인</button>
+    <button onclick="findFileName()">확인</button>
     <br>
     <p id="result2"></p>
-    <input type="text" id="q3" placeholder="시간을 입력하세요">
+    <input type="text" id="num" placeholder="입력하세요">
     <button onclick="counter()">확인</button>
     <br>
     <p id="result3"></p>
-    <input type="text" id="q4" placeholder="정수를 입력하세요">
-    <button onclick="counter()">확인</button>
-    <br>
-    <p id="result4"></p>
 </body>
 </html>
