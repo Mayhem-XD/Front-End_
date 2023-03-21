@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isPalindrome</title>
+    <style>
+        * {margin: 40px;}
+    </style>
+    <script>
+        // let resTag = document.getElementById('result');
+        // str=document,getElementById('result')
+        let words='';
+        function input()
+        {
+            const wordsNode = document.getElementById('word');
+            word+=wordsNode.value;
+        }
+        function isPalindrome()
+        {
+            let reverStr ='';
+            for(let i=word.length-1;i>=0;i--)
+            {
+                reverStr += word[i];
+            }
+            return str == reverStr;
+        }
+        document.getElementById('result').innerHTML=words;
+
+    </script>
+</head>
+<body>
+    <input type="text" id="word" placeholder="문자를 입력하세요">
+    <button onclick="isPalindrome()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
