@@ -91,47 +91,17 @@
                 const hourNow =now.getHours();
                 const minNow =now.getMinutes();
                 const secNow =now.getSeconds();
-                if(hourNow>10)
-                {
-                    let hh=hourNow%10;     //지금 17이니깐 hhh=7 now-hhh = 10 하면 나오고 10으로 나눠
-                    let h=((hourNow-hh)/10); 
-                    hour1.src=`../../00.numbers_img/${h}.svg`;
-                    hour2.src=`../../00.numbers_img/${hh}.svg`;
-                }
-                else
-                {
-                    let h=0,hh=hourNow;
-                    hour1.src=`../../00.numbers_img/${h}.svg`;
-                    hour2.src=`../../00.numbers_img/${hh}.svg`;
-                }
-                if(minNow>10)
-                {
-                    let mm=minNow%10;     
-                    let m=((minNow-mm)/10);
-                    min1.src=`../../00.numbers_img/${m}.svg`;
-                    min2.src=`../../00.numbers_img/${mm}.svg`;
-                }
-                else
-                {
-                    let m=0,mm=minNow;
-                    min1.src=`../../00.numbers_img/${m}.svg`;
-                    min2.src=`../../00.numbers_img/${mm}.svg`;
-                }
-                if(secNow>10)
-                {
-                    let ss=secNow%10;     
-                    let s=((secNow-ss)/10);
-                    sec1.src=`../../00.numbers_img/${s}.svg`;
-                    sec2.src=`../../00.numbers_img/${ss}.svg`;
-                }
-                else
-                {
-                    let s=0,ss=secNow;
-                    sec1.src=`../../00.numbers_img/${s}.svg`;
-                    sec2.src=`../../00.numbers_img/${ss}.svg`;
-                }
-                
-                
+                //  hh = 일의자리 ex) 23시 -> 3 /h = 십의자리 ex 23-hh(23) -> 20 을 10으로 나눔 -> 2
+                let hh=hourNow%10 ,h, mm=minNow%10 ,m, ss=secNow%10, s;                                           
+                hourNow>10 ? h=((hourNow-hh)/10) : h=0;                         
+                minNow>10 ? m=((minNow-mm)/10) : m=0;                         
+                secNow>10 ? s=((secNow-ss)/10) : s=0;                         
+                hour1.src=`../../00.numbers_img/${h}.svg`;
+                hour2.src=`../../00.numbers_img/${hh}.svg`;
+                min1.src=`../../00.numbers_img/${m}.svg`;
+                min2.src=`../../00.numbers_img/${mm}.svg`;
+                sec1.src=`../../00.numbers_img/${s}.svg`;
+                sec2.src=`../../00.numbers_img/${ss}.svg`;
                 
                 //let week='일월화수목금토'.split('');
                 //dateStr+='('+week[now.getDay()]+')';
