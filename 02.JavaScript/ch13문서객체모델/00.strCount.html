@@ -24,10 +24,14 @@
         }
         function findFileName()
         {   
-            let str = 'C:\\Program Files\\nodejs\\node.exe.';
+            let path = document.getElementById('str').value;
+            let index = path.lastIndexOf('\\');
+            let filename = path.substring(index + 1);
+            document.getElementById('result2').innerHTML = filename;
+            /* let str = 'C:\\Program Files\\nodejs\\node.exe.';
             let result = str.slice(24,28);
             let resTag = document.getElementById('result2');
-            resTag.innerHTML=result;
+            resTag.innerHTML=result; */
         }
         function counter()
         {
@@ -53,13 +57,17 @@
 </head>
 <body>
     
+    <p>회문 찾기</p>
     <input type="text" id="word" placeholder="입력하세요">
     <button onclick="isPalindrome()">확인</button>
     <br>
     <p id="result1"></p>
+    <p>파일 이름 찾기</p>
+    <input type="text" id="str" placeholder="입력하세요">
     <button onclick="findFileName()">확인</button>
     <br>
     <p id="result2"></p>
+    <p>몇번 나왔는지</p>
     <input type="text" id="num" placeholder="입력하세요">
     <button onclick="counter()">확인</button>
     <br>
