@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <title>반복문</title>
+    <script>
+        $(document).ready(function()
+        {
+            const $lis=$('li');
+            for(let i=0;i<$lis.length;i++)
+            {
+                if(i%2==1)      //두번째, 네번째 등 짝수 번째
+                {
+                    const li=$lis.get(i);       //i번째 요소를 가져옴
+                    $(li).css('backgroundColor','yellow');
+                }
+            }
+            $('li').each(function(index, _){                    //  안쓰는 변수명 _(python에서)
+                if(index%2==0)
+                {
+                    $(this).css('backgroundColor','beige');     //this가 해당되는 element 임
+                }
+                else{
+                    $(this).css('color','red');
+                }
+            });
+            $('span').each(function(index, _){
+                index%2==0 ? $(this).css('fontSize','30px') : $(this).css('fontSize','20px');
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <ul id="fruits"><span>내가 좋아하는 과일</span>
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <ul id="food"><span>내가 좋아하는 음식</span>  
+        <li class="national">김치찌개</li>
+        <li class="foreign">파스타</li>
+        <li class="national">갈비찜</li>
+    </ul>
+</body>
+</html>
