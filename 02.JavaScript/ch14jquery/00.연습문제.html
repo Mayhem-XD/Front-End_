@@ -85,37 +85,25 @@
         {
             setInterval(function(){
                 const now = new Date();
-                const hourNow =now.getHours();
-                const minNow =now.getMinutes();
-                const secNow =now.getSeconds();
-                const week = '일월화수목금토'.split('');
-                let dateStr = myDatetime(now).substring(2, 10); 
-                dateStr += '(' + week[now.getDay()] + ')';
-                const timeStr = myDatetime(now).substring(11, 19);
-                document.getElementById('date').innerHTML = dateStr;
-
-                document.getElementById('hour1').src = `../../00.numbers_img/${timeStr[0]}.svg`;
-                document.getElementById('hour2').src = `../../00.numbers_img/${timeStr[1]}.svg`;
-                document.getElementById('min1').src = `../../00.numbers_img/${timeStr[3]}.svg`;
-                document.getElementById('min2').src = `../../00.numbers_img/${timeStr[4]}.svg`;
-                document.getElementById('sec1').src = `../../00.numbers_img/${timeStr[6]}.svg`;
-                document.getElementById('sec2').src = `../../00.numbers_img/${timeStr[7]}.svg`;
-
-                //  hh = 일의자리 ex) 23시 -> 3 /h = 십의자리 ex 23-hh(23) -> 20 을 10으로 나눔 -> 2
-                /* let hh=hourNow%10 ,h, mm=minNow%10 ,m, ss=secNow%10, s;                                           
-                hourNow>9 ? h=((hourNow-hh)/10) : h=0;                         
-                minNow>9 ? m=((minNow-mm)/10) : m=0;                         
-                secNow>9 ? s=((secNow-ss)/10) : s=0;                         
-                $('#hour1').attr('src',`../../00.numbers_img/${h}.svg`);
-                $('#hour2').attr('src',`../../00.numbers_img/${hh}.svg`);
-                $('#min1').attr('src',`../../00.numbers_img/${m}.svg`);
-                $('#min2').attr('src',`../../00.numbers_img/${mm}.svg`);
-                $('#sec1').attr('src',`../../00.numbers_img/${s}.svg`);
-                $('#sec2').attr('src',`../../00.numbers_img/${ss}.svg`);
-                 */
-
-
+                const week = '일월화수목금토'.split('')[now.getDay()];  //week = 목 [일 월 화 수.....토] '~' '~' '~' [4] 
+                const date_ = myDatetime(now).substring(2, 10);     // 23-03-23
+                const currentTIME = myDatetime(now).substring(11, 19);  // 22:12:32
+                const currentDate =`${date_} (${week})`;        //23-03-23 (목)
+                $('#date').text(currentDate);       
+                const imgChange = [0, 1, 3, 4, 6, 7];
+                $('.numImg').each(function(index, _) 
+                {
+                    $(this).attr('src', `../../00.numbers_img/${currentTIME[imgChange[index]]}.svg`);
+                });
                 
+                /*
+                document.getElementById('h1').src = `../../00.numbers_img/${currentTIME[0]}.svg`;
+                document.getElementById('h2').src = `../../00.numbers_img/${currentTIME[1]}.svg`;
+                document.getElementById('m1').src = `../../00.numbers_img/${currentTIME[3]}.svg`;
+                document.getElementById('m2').src = `../../00.numbers_img/${currentTIME[4]}.svg`;
+                document.getElementById('s1').src = `../../00.numbers_img/${currentTIME[6]}.svg`;
+                document.getElementById('s2').src = `../../00.numbers_img/${currentTIME[7]}.svg`; */
+                        
             },1000);
         });
     </script>
@@ -149,6 +137,8 @@
     </div>
     <div class="row my-3">
         <div class="col mt-3">
+            <h2 id="date"></h2>
+            <hr>
             <img id="hour1" class="numImg">
             <img id="hour2" class="numImg">
             <img src="../../00.numbers_img/DotsThreeOutlineVertical.svg" alt="colon">
