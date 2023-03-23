@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>ch00 연습문제</title>
-    <script>
-        function ans1()
+function ans1()
 {
     let num1 = Number(document.getElementById('num1').value);
     let num2 = Number(document.getElementById('num2').value);
@@ -23,6 +13,12 @@
         powerArr.push(Math.pow(2, i));
     }
     let resultStr='';
+    //1줄씩 <br>삽입
+    // for (let power of powerArr)     
+    // {
+    //     resultStr+=power + '<br>'
+    // }
+    //4개 출력후 줄바꿈
     for (let i =0;i<powerArr.length;i++)
     {
         if ((i+1)%4==0)
@@ -57,7 +53,13 @@ function ans2()
 function ans3()
 {
     let priceStr = document.getElementById('price').value;
-    let prices = priceStr.split(';');       
+    let prices = priceStr.split(';');       //prices는 배열, element는 string
+    // let newPrices=[];
+    // for (let price of prices)
+    // {
+    //     newPrices.push(Number(price));
+    // }
+    //각각의 값에 대해 parseInt 한 값 보내기
     let newPrices=prices.map((x)=>parseInt(x));
     newPrices.sort((a,b)=>(b-a));
     let resultStr='';
@@ -80,17 +82,17 @@ function ans3()
 
 
 // 시계
-function twoDigit(num) {
+/* function twoDigit(num) {
     return (num < 10) ? '0' + num : String(num);
 }
 function myDatetime(date)
 {
     return (`${date.getFullYear()}-${twoDigit(date.getMonth()+1)}-${twoDigit(date.getDate())}`+
     `-${twoDigit(date.getHours())}:${twoDigit(date.getMinutes())}:${twoDigit(date.getSeconds())}`)
-}
+} */
 
 
-window.onload=function()
+/* window.onload=function()
 {
     setInterval(function(){
         const now = new Date();
@@ -110,9 +112,9 @@ window.onload=function()
         const secNow =now.getSeconds();
         //  hh = 일의자리 ex) 23시 -> 3 /h = 십의자리 ex 23-hh(23) -> 20 을 10으로 나눔 -> 2
         let hh=hourNow%10 ,h, mm=minNow%10 ,m, ss=secNow%10, s;                                           
-        hourNow>9 ? h=((hourNow-hh)/10) : h=0;                         
-        minNow>9 ? m=((minNow-mm)/10) : m=0;                         
-        secNow>9 ? s=((secNow-ss)/10) : s=0;                         
+        hourNow>10 ? h=((hourNow-hh)/10) : h=0;                         
+        minNow>10 ? m=((minNow-mm)/10) : m=0;                         
+        secNow>10 ? s=((secNow-ss)/10) : s=0;                         
         hour1.src=`../../00.numbers_img/${h}.svg`;
         hour2.src=`../../00.numbers_img/${hh}.svg`;
         min1.src=`../../00.numbers_img/${m}.svg`;
@@ -120,59 +122,37 @@ window.onload=function()
         sec1.src=`../../00.numbers_img/${s}.svg`;
         sec2.src=`../../00.numbers_img/${ss}.svg`;
         
+        //let week='일월화수목금토'.split('');
+        //dateStr+='('+week[now.getDay()]+')';
         document.getElementById('date').innerHTML=`${dateStr}  (${week[now.getDay()]}) ` ;
         document.getElementById('time').innerHTML=timeStr;
+        //
     },1000);
     
+} */
+function twoDigit(num) {
+    return (num < 10) ? '0' + num : String(num);
 }
-    </script>
-</head>
-<body>
-    <div class="container-fluid p-3 bg-primary text-white text-center">
-        <h1>연습문제</h1>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col">
-                <h4>연습문제 1</h4>
-                <input type="text" id="num1" placeholder="1~20 사이의 정수"class="form-control"><br>
-                <input type="text" id="num2" placeholder="10~30 사이의 정수"class="form-control"><br>
-                <button onclick="ans1()">제출</button><br>
-                <p id="result1"></p>
-            </div>
-            <div class="col">
-                <h4>연습문제 2</h4>
-                <textarea id="sentence" class="form-control" rows="5"></textarea>
-                
-                <button onclick="ans2()">제출</button><br>
-                <p id="result2"></p>
-            </div>
-            <div class="col">
-                <h4>연습문제 3</h4>
-                <input type="text" id="price" placeholder="가격을 입력하세요"class="form-control"><br>
-                <button onclick="ans3()">제출</button><br>
-                <p id="result3"></p>
-            </div>
-        </div>
-        <div class="row my-3">
-            <div class="col mt-3">
-                <img id="hour1">
-                <img id="hour2">
-                <img src="../../00.numbers_img/DotsThreeOutlineVertical.svg" alt="colon">
-                <img id="min1">
-                <img id="min2">
-                <img src="../../00.numbers_img/DotsThreeOutlineVertical.svg" alt="colon">
-                <img id="sec1">
-                <img id="sec2">
+function myDatetime(date)
+{
+    return (`${date.getFullYear()}-${twoDigit(date.getMonth()+1)}-${twoDigit(date.getDate())}`+
+    `-${twoDigit(date.getHours())}:${twoDigit(date.getMinutes())}:${twoDigit(date.getSeconds())}`)
+}
+window.onload(function(){
+    setInterval(function(){
+        const now = new Date();
+        let week='일월화수목금토'.split('');
+        const dateStr = myDatetime(now).substring(2,10); 
+        dateStr+='('+week[now.getDay()]+')';
+        const timeStr = myDatetime(now).substring(11,19)
 
-            </div>
-            <div class="col mt-3">
-                <h2 id="date"></h2>
-                <hr>
-                <h2 id="time"></h2>
-            </div>
-        </div>
 
-    </div>
-</body>
-</html>
+        document.getElementById('h1').src=`../../00.numbers_img/${timeStr[0]}.svg`
+        document.getElementById('h2').src=`../../00.numbers_img/${timeStr[0]}.svg`
+        document.getElementById('m1').src=`../../00.numbers_img/${timeStr[0]}.svg`
+        document.getElementById('m2').src=`../../00.numbers_img/${timeStr[0]}.svg`
+        document.getElementById('s1').src=`../../00.numbers_img/${timeStr[0]}.svg`
+        document.getElementById('s2').src=`../../00.numbers_img/${timeStr[0]}.svg`
+        
+    })
+})
