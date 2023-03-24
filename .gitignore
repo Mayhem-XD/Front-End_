@@ -4,6 +4,7 @@ test.js
 test.css
 test.c
 00.test.py
+test1.js
 # /를 붙이면 디렉토리를 의미함
 # data 디렉토리에 있는 파일들은 Repositoly에 저장하지 말것
 data/

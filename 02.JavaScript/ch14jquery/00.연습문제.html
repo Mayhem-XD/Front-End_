@@ -8,6 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <title>연습문제</title>
+    <style>
+        h2 {text-align: center;}
+        
+    </style>
     <script>
         function ans1() 
         {
@@ -62,14 +66,14 @@
             {
                 if ((i+1)%4==0)
                 {
-                    resultStr += newPrices[i] +'\n';
+                    resultStr += newPrices[i] +'<br>';
                 }
                 else
                 {
                     resultStr += newPrices[i] + ',';
                 }
             }
-            $('#result3').text(`price : ${resultStr}`);
+            $('#result3').html(`price : ${resultStr}`);     //<br>태그때문에 html/ html로 통일하면 별 문제 없음
 
         }       
         function twoDigit(num) {
@@ -95,14 +99,6 @@
                 {
                     $(this).attr('src', `../../00.numbers_img/${currentTIME[imgChange[index]]}.svg`);
                 });
-                
-                /*
-                document.getElementById('h1').src = `../../00.numbers_img/${currentTIME[0]}.svg`;
-                document.getElementById('h2').src = `../../00.numbers_img/${currentTIME[1]}.svg`;
-                document.getElementById('m1').src = `../../00.numbers_img/${currentTIME[3]}.svg`;
-                document.getElementById('m2').src = `../../00.numbers_img/${currentTIME[4]}.svg`;
-                document.getElementById('s1').src = `../../00.numbers_img/${currentTIME[6]}.svg`;
-                document.getElementById('s2').src = `../../00.numbers_img/${currentTIME[7]}.svg`; */
                         
             },1000);
         });
