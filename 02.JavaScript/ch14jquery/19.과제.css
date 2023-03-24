@@ -1,0 +1,17 @@
+.mainBg {background-image: url('../../00.numbers_img/vis_1.jpg');background-repeat: no-repeat;background-position: center;
+    background-size: cover;margin: 0;padding: 0;
+    width: 100%;
+    height: 1000px;}
+.hbBg {background-image: url('../../00.numbers_img/vis_3.jpg');background-repeat: no-repeat;background-position: center;
+        background-size: cover;
+        width: 100%;margin: 0;padding: 0;
+        height: 1000px;}
+.foodImg:hover {
+    transform: scale(1.5);
+    transition: transform 0.5s;
+}
+.nav-link:hover {
+background-color: red;
+color: white;
+border-color: red;
+}
