@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./19.과제.css">
     <script src="./19.과제.js"></script>
-    <title>Document</title>
+    <title>과제</title>
     <style>
 
     </style>
 </head>
-
+<!--                                            navbar                                              -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-0 fixed-top" style="opacity: 0.8">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-0 fixed-top" style="opacity: 0.9">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="../../00.numbers_img/0.svg" height="36"></a>
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">첫번째</a>
+                    <a class="nav-link" href="#intro">소개글</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="#hb">취미</a>
@@ -40,85 +42,66 @@
     </nav>
     <!-- ///////////////////////////////////////////////////////////////////////////// -->
     <div class="mainBg">
-        <div class="container mx-3 mt-3">
+        <div class="container mt-3">
             <div class="row text-center">
-
-                <h2 class="text-center" style="color: white;font-size: 60px;">인트로</h2>
-                <p class="mt-3 text-center" style="color: white; font-size: 50px;">내용 영역1</p>
-                <p class="mt-3 text-center" style="color: white; font-size: 50px;">내용 영역2</p>
-                <p class="mt-3 text-center" style="color: white; font-size: 50px;">내용 영역3</p>
+                <h2 class="text-center" style="color: white;font-size: 60px; margin-top: 80px ; ">소개글</h2>
+                <p id="intro" class="mt-3 text-center" style="color: white; font-size: 40px;">안녕하세요.</p>
+                <p class="mt-3 text-center" style="color: white; font-size: 40px;">빅데이터반 주건혁입니다.</p>
+                <p class="mt-3 text-center" style="color: white; font-size: 36px; font-style: italic;">빠르고 간결하게 보여드리겠습니다.</p>
             </div>
         </div>
     </div>
-    <div class="hbBg">
-        <div class="container mx-3 mt-0">
-            <div class="row text-center">
-
-                <p style="color: white;font-size: 60px;">취미생활 영역</p>
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+    <div class="hbBg mt-0">
+        <div class="row text-center ">
+            <div class="row text-center mt-5">
+                <div id="hb">
+                    <h2 style="color: white;font-size: 60px;">취미생활</h2>
+                </div>
+            </div>
+            <div>
+                <h4>취미중 하나는 요리입니다.</h4>
+                <h5>자취하던 시절에 주변식당에서 팔던 음식들에 질려서 쌓여서</h5>
+                <h5>그 돈이면 그냥 내가 해먹음이라는 생각에 제육으로 시작해서 </h5>
+                <h5>최근까지도 가끔씩 요리 유튜브보고 따라하고 있습니다.</h5>
             </div>
         </div>
+    
     </div>
-    <div class="container mx-0 mt-0">
-        <div class="row text-center">
-        </div>
-        <div class="row text-center">
-            <div id="hb">
-                <p style="color: white;font-size: 60px;">취미생활 영역</p>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-2">
-                123
-            </div>
-            <div class="col-8">
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <div class="container  mt-0 mb-5">
+        <div class="subContents">
+            
+            <div class="vacation">
                 <!-- Carousel -->
                 <div id="demo" class="carousel slide" data-bs-ride="carousel">
                     <!-- Indicators/dots -->
-                    <div class="carousel-indicators">
-                        <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button> -->
-                    </div>
+                    <div class="carousel-indicators"></div>
 
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../../00.numbers_img/0.svg" alt="Los Angeles" class="d-block" style="width:100%">
+                            <img src="../00.img/subimg1.jpg" alt="LWat Chedi Luang" class="d-block" style="width:100%">
                             <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>We had such a great time in LA!</p>
+                                <h3>왓 체디 루앙</h3>
+                                <p>치앙마이의 올드타운에 있는 거대한 고대 사원</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="../../00.numbers_img/1.svg" alt="Chicago" class="d-block" style="width:100%">
+                            <img src="../00.img/subimg2.jpg" alt="Sunday Night Market" class="d-block" style="width:100%">
                             <div class="carousel-caption">
-                                <h3>Chicago</h3>
-                                <p>Thank you, Chicago!</p>
+                                <h3>선데이마켓</h3>
+                                <p>치앙마이의 매주 일요일 저녁에 열리는 야시장</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="../../00.numbers_img/2.svg" alt="New York" class="d-block" style="width:100%">
+                            <img src="../00.img/subimg3.jpg" alt="Wat Phra Singh" class="d-block" style="width:100%">
                             <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../../00.numbers_img/3.svg" alt="New York" class="d-block" style="width:100%">
-                            <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../../00.numbers_img/4.svg" alt="New York" class="d-block" style="width:100%">
-                            <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>We love the Big Apple!</p>
+                                <h3>왓 프라씽</h3>
+                                <p>화려한 황금사원</p>
                             </div>
                         </div>
                     </div>
-
                     <!-- Left and right controls/icons -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
@@ -128,50 +111,50 @@
                     </button>
                 </div>
             </div>
-            <div class="col-2">
-                123
+            <div class="text-center my-3">
+                <h3 style="font-family: sans-serif;">올해초에 예정이었던 태국 치앙마이</h3>
             </div>
+            
+            
         </div>
         <!-- 음식 영역 -->
-        <div class="row">
-            <div class="col-2">
-
-            </div>
-            <div class="col-8">
-                <div id="food">
+        <div class="row mt-5">
+                <div id="food" >
                     <div class="row">
-                        <div class="col">
-
-                            <img class="foodImg" src="../../00.numbers_img/6.svg" class="rounded float-start "
-                                width="200" height="200" alt="...">
-                            <img class="foodImg" src="../../00.numbers_img/9.svg" class="rounded mx-auto " width="200"
-                                height="200">
-                            <img class="foodImg" src="../../00.numbers_img/9.svg" class="rounded mx-auto " width="200"
-                                height="200">
-                            <img class="foodImg" src="../../00.numbers_img/6.svg" class="rounded mx-auto " width="200"
-                                height="200" alt="..">
+                        <div class="col-12">
+                            <img class="foodImg" src="../00.img/foodImg01.jpg" class="rounded float-start "
+                                width="300" height="300" alt="food1">
+                            <img class="foodImg" src="../00.img/foodimg02.jpg" class="rounded mx-auto " width="300"
+                                height="300">
+                            <img class="foodImg" src="../00.img/foodimg03.jpg" class="rounded mx-auto " width="300"
+                                height="300">
+                            <img class="foodImg" src="../00.img/foodimg04.jpg" class="rounded float-end " width="300"
+                                height="300" alt="food4">
                         </div>
                     </div>
-                    <div class="text-center">
-                        <h2 style="color: black;font-size: 60px;">음식 영역
+                    <div class="text-center mt-5">
+                        <h2 style="color: black;font-size: 40px;">좋아 하는 음식들
                         </h2>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-
-            </div>
-        </div>
         <div class="row">
-            <div class="text-center">
-                <h2 style="color: black;font-size: 60px;">
-                    엔딩 글
-                </h2>
-            </div>
         </div>
-
+        
     </div>
-
+    
+    <div class="outro">
+            <h2 class="text-center mt-3 mb-0" style="color: white;font-size: 40px;">
+            <br>
+                감사합니다.
+            
+            </h2>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark ">
+        <div class="container-fluid justify-content-center" style="color: white;">
+            Copyright &copy; jkh Corp. All rights reserved.
+        </div>
+    </nav>
 </body>
 
 </html>
