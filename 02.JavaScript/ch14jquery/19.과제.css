@@ -1,4 +1,5 @@
 * {font-family: 'Noto Sans KR', sans-serif; }
+#wrap {background-color: #777;}
 .mainBg {background-image: url('../00.img/mainbg.jpg');background-repeat: no-repeat;background-position: center;
     background-size: cover;margin: 0;padding: 0;
     width: 100%;
@@ -7,9 +8,34 @@
         background-size: cover;
         width: 100%;margin: 0;padding: 0;
         height: 1000px;}
+.foodImgContainer {
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+        overflow: hidden;
+
+    }
+
+.imgText {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+.foodImg {
+            max-width: 250px;
+            max-height: 250px;
+            transition: transform 0.2s ease-out;
+        }
 .foodImg:hover {
-    transform: scale(1.5);
+    transform: scale(1.4);
     transition: transform 0.5s;
+    
+
 }
 .outro {
     background-image: url('../00.img/outro.jpg'); background-repeat: no-repeat;background-position: center;
@@ -17,7 +43,14 @@
     width: 100%;margin: 0;padding: 0;
     height: 300px;
 }
+h3, p {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px black;
+    }
 h4, h5 {text-align: center;color: white; margin-top: 50px;}
+
 
 .nav-link:hover {
 background-color: red;
