@@ -13,37 +13,42 @@
         window.onload=function()
         {
             const ctx = document.getElementById('myChart');
-            let myData=[];
-            for(let i=0;i<100;i++)
+            let xValues=['Italy','France','Spain','USA','Argentina'];
+            let yValues=[55,49,44,24,15];
+            let barColors=["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"];
+            new Chart('myChart',                //ctx 대신 canvas id값 적어도 됨
             {
-                let xVal=Math.random()*120+40;       //40~160 사이
-                let yVal=Math.random()*10+6;
-                myData.push({x: xVal,y: yVal});
-            }
-            new Chart(ctx, 
-            {
-                type: 'scatter',
+                type: 'doughnut',
                 data: 
-                {
-                    datasets:[{
-                        label: 'mydata',
-                        pointRadius: 4,
-                        pointBackgroundColor:'rgb(0,0,255)',
-                        data: myData
+                {   
+                    labels:xValues,
+                    datasets:[{                
+                        backgroundColor:barColors,
+                        /* backgroundColor: 
+                        [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            
+                        ], */
+                        data:yValues
+                        
                     }]
                     
                 },
                 options:
                 {
-                    scales:{
-                        xAxes:[{ticks:{min:40,max:160}}],
-                        yAxes:[{ticks:{min:6,max:16}}],
+                    scales:
+                    {
+                        yAxes:[{ticks:{beginAtZeor:true}}]          //  애니메이션
                     },
                     plugins:{
                         legend: {display:true},
                         title:{
                             display:true,
-                            text:'내가 만든 산점도',
+                            text:'World Wine Production 2018',
                             padding:{top:10,bottom:20},
                             font:{size:20}
 
@@ -58,7 +63,7 @@
 <body style="margin: 40px;">
     <div class="container-fluid p-3 bg-primary text-white text-center">
         <h1>chart</h1>
-        <p>산점도 그리기(scatter plot)</p>
+        <p>파이 차트(Pie Chart)</p>
     </div>
     <div class="container mt-5">
         <div class="row">
