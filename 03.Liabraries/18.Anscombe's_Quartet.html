@@ -58,36 +58,48 @@
                         {x: 8, y: 7.91},
                         {x: 8, y: 6.89}
                     ];
+            let line=[{x:3,y:4.5},{x:20,y:13}];
             
             new Chart(ctx, 
             {
-                type: 'scatter',
+                // type: 'scatter', 여러종류의 차트 그리고 싶으면 type을 안으로 넣음
                 data: 
                 {
                     datasets:[
                     {
+                        type:'scatter',
                         label: 'dataSet_1',
                         pointRadius: 4,
                         pointBackgroundColor:'rgb(0,0,255)',
                         data:dataSet_1 ,
                     },
                     {
+                        type:'scatter',
                         label: 'dataSet_2',
                         pointRadius: 4,
                         data: dataSet_2,  
                         pointBackgroundColor: 'rgb(255, 0, 0)'
                     },
                     {
+                        type:'scatter',
                         label: 'dataSet_3',
                         pointRadius: 4,
                         data: dataSet_3,
                         pointBackgroundColor:'rgb(0,255,0)'
                     },
                     {
+                        type:'scatter',
                         label:'dataSet_4',
                         pointRadius: 4,
                         data: dataSet_4,
                         pointBackgroundColor:'rgb(200,200,60)'
+                    }
+                    ,
+                    {
+                        type:'line',label:'Regression line',fill:'false',
+                        backgroundColor:'rgba(255,0,255,1.0)',
+                        borderColor:'rgba(255,0,255,0.5)',
+                        data: line
                     }
                     
                 ]
@@ -124,7 +136,7 @@
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                <canvas id="myChart" width="100%"></canvas>        
+                <canvas id="myChart" width="100%" height="80%"></canvas>        
             </div>
             <div class="col-2"></div>
         </div>
